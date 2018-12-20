@@ -1,0 +1,23 @@
+.container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+}
+.container .left{
+    width: 400px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #369;
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.container .left .col{
+    box-shadow: 2px 0 7px 0 #333;
+    flex-grow: 1;
+}

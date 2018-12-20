@@ -1,0 +1,60 @@
+.container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-items: stretch;
+}
+.container .left{
+    flex-basis: 400px;
+    background-color: #009688;
+    color: #fff;
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+}
+.container .left .col{
+    box-shadow: 2px 0 7px 0 #333;
+    flex-grow: 1;
+}
+.container .left .col .item{
+    border-bottom: 1px solid #00695f;
+    cursor: pointer;
+    display: flex;
+}
+.container .left .col .item .name{
+    padding: 10px;
+    flex-grow: 1;
+}
+.container .left .col .item.selected{
+    background-color: #00695f;
+}
+button{
+    background: #009688;
+    color:#fff;
+    text-transform: uppercase;
+    border:none;
+    box-shadow: 1px 1px 3px  0 #333 inset;
+    cursor: pointer;
+}
+.container .left .col .addform{
+    padding: 4px;
+    display: flex;
+    margin-top: 10px;
+}
+.container .left .col .addform input{
+    flex-grow: 1;
+    line-height: 40px;
+    box-shadow: 1px 1px 3px  0 #333 inset;
+    border: none;
+    padding: 0 5px;
+}
+
+.container .left .subcategories{
+    display: none;
+}

@@ -1,0 +1,64 @@
+buildscript {
+    repositories {
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+        classpath 'org.springframework:springloaded:1.2.6.RELEASE'
+    }
+}
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '1.8'
+    id 'java'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+bootJar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+bootRun {
+    
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.zsoltfabok:sqlite-dialect:1.0")
+    compile("org.hibernate:hibernate-core:5.4.0.Final")
+    compile("org.xerial:sqlite-jdbc:3.25.2")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compileOnly("org.projectlombok:lombok:1.18.4")
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+    testCompile("junit:junit")
+}
+
+group 'ab.loc'
+version '1.0'
